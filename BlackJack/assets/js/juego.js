@@ -14,21 +14,37 @@ const CreateDeck = () => {
             deck.push(highCard + letter)
         }
     }
-    console.log(deck)
-    deck = _.shuffle(deck)
+    // console.log(deck)
+    deck = _.shuffle(deck)  //Organiza el contenido de manera desordenada
     console.log(deck)
 }
 
-
-const GetCard = () =>{
+const GetCard = () => {
     if(deck.length != 0){
         let newCard = deck.pop()
         return newCard
     }else{
         throw 'No more cards in the deck'
-    } 
+    }
+}
+
+const CardValue = card => {
+    let valCard = card.substring(0, card.length - 1)
+
+    return (isNaN(valCard) 
+            ? valCard === 'A' ? 11 : 10 
+            : valCard * 1)
+    
+    // isNaN(valCard) 
+    // ? 
+    //     points = valCard === 'A' ? 11 : 10
+    // : 
+    //     points = valCard * 1;
+
+    // return points
 }
 
 CreateDeck()
-console.log(GetCard())
-console.log(deck)
+// console.log(lastReult.substring(0, lastReult.length - 1))
+console.log(CardValue(GetCard()))
+// console.log({deck})
