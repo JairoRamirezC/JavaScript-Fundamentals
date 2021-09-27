@@ -1,0 +1,45 @@
+Preguntas Platzi.
+
+Responde las siguientes preguntas en la sección de comentarios:
+
+¿Qué es una variable y para qué sirve?
+
+Una variable es una espacio en memoria que nos sirve para almacenar temporalmente un valor
+
+¿Cuál es la diferencia entre declarar e inicializar una variable?
+
+Cuando se declara, se define que tipo de variable sera; como array, const, var, let, y agregando el nombre de la misma. 
+Y inicializar es darle un valor inicial a esa variable; como 0, 'Hola', etc
+
+¿Cuál es la diferencia entre sumar números y concatenar strings?
+
+Una es operacion matematica y la otra es la union de dos valores o variables
+
+¿Cuál operador me permite sumar o concatenar?
+
+el operador +
+
+
+Determina el nombre y tipo de dato para almacenar en variables la siguiente información:
+
+let Nombre = 'string'
+let Apellido = 'string'
+let NombreUsuarioPlatzi = 'string'
+let Edad = integer
+let CorreoElectrónico = 'string'
+let MayorDeEdad = boolean
+let DineroAhorrado = float
+let Deudas = float
+
+
+4️⃣ Calcula e imprime las siguientes variables a partir de las variables del ejemplo anterior:
+
+Nombre completo (nombre y apellido)
+
+const fullName = Nombre + ' ' + Apellido
+
+Dinero real (dinero ahorrado menos deudas)
+
+const RealMoney = DineroAhorrado - Deudas
+
+

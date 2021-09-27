@@ -1,6 +1,13 @@
 let deck = []
 const letters = ['C', 'H', 'S', 'D']
 const highCards = ['K', 'Q', 'J', 'A']
+let pointsCard = 0
+
+// variables del HTML
+const btnGetCard = document.querySelector('#btnGetCard');
+const small = document.querySelector('small')
+let divCards = document.querySelector('#cards-game')
+
 
 const CreateDeck = () => {
     for(let i = 2; i <= 10; i++){
@@ -14,8 +21,8 @@ const CreateDeck = () => {
             deck.push(highCard + letter)
         }
     }
-    // console.log(deck)
-    deck = _.shuffle(deck)  //Organiza el contenido de manera desordenada
+    //Organiza el contenido de manera desordenada
+    deck = _.shuffle(deck)
     console.log(deck)
 }
 
@@ -35,6 +42,8 @@ const CardValue = card => {
             ? valCard === 'A' ? 11 : 10 
             : valCard * 1)
     
+    // Otra forma de realizar el return de esta funcion es:
+    //
     // isNaN(valCard) 
     // ? 
     //     points = valCard === 'A' ? 11 : 10
@@ -45,6 +54,19 @@ const CardValue = card => {
 }
 
 CreateDeck()
-// console.log(lastReult.substring(0, lastReult.length - 1))
-console.log(CardValue(GetCard()))
-// console.log({deck})
+
+// Funciones de logicas
+
+btnGetCard.addEventListener('click', () => {
+    //Agregar valor a la etiqueta SMALL
+    let card = GetCard()
+    pointsCard = pointsCard + CardValue(card)
+    small.innerText = pointsCard
+    // console.log(pointsCard)
+
+    // Agrega carta a la etiqueta IMG
+    let imgCards = document.createElement('img')
+    imgCards.src = `assets/cartas/${card}.png`
+    imgCards.classList.add('card-view')
+    divCards.append(imgCards)
+})

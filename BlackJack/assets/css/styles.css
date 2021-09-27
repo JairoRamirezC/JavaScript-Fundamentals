@@ -11,14 +11,14 @@ body {
   font-size: 25px;
 }
 
-.carta {
+.card-view {
   position: relative;
   width: 150px;
   left: 100px;
   margin-left: -75px;
 }
 
-#jugador-cartas,
+#cards-game,
 computadora-cartas {
   height: 250px;
 }
