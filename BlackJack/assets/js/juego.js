@@ -9,20 +9,22 @@ const small = document.querySelector('small')
 let divCards = document.querySelector('#cards-game')
 
 
+// CreateDeck: llena el array deck con las cartas del blackjack
 const CreateDeck = () => {
+    // Ciclo para crear las cartas con numeros del 2 - 10
     for(let i = 2; i <= 10; i++){
         for(letter of letters){
             deck.push(`${i}${letter}`)
         }
     }
-
+    // Ciclo para crear las cartas con letras 'K', 'Q', 'J', 'A'
     for(highCard of highCards){
         for(letter of letters){
             deck.push(highCard + letter)
         }
     }
-    //Organiza el contenido de manera desordenada
-    deck = _.shuffle(deck)
+    
+    deck = _.shuffle(deck) //Altera el contenido de deck de manera desordenada
     console.log(deck)
 }
 
@@ -54,6 +56,8 @@ const CardValue = card => {
 }
 
 CreateDeck()
+
+console.log(document.querySelectorAll('img'))
 
 // Funciones de logicas
 
